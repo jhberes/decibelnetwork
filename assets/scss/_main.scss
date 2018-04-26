@@ -1,0 +1,268 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #f2f2f2;
+}
+
+
+//TYPOGRAPHY//////////
+h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.display-1,.display-2,.display-3,.display-4 {
+	font-weight: bold;
+	font-family: 'Montserrat', sans-serif;
+}
+.text-dark {
+	color: #111;
+}
+
+
+//BUTTONS////////
+.btn {
+	text-transform: uppercase;
+	text-transform: capitolize;
+	font-weight: bold;
+	letter-spacing: 1px;
+	font-family: 'Roboto', sans-serif;
+	color: white;
+	&.btn-outline-primary {
+		color: $primary;
+	}
+	&.btn-lg {
+		padding: 0.5rem 2rem
+	}
+	&.btn-md {
+		padding: 0.5rem 1.5rem
+	}
+	&.btn-sm {
+		padding: 0.5rem 1.25rem
+	}
+}
+
+a:focus {
+	outline: 0;
+}
+button:focus {
+	outline:0;
+}
+
+
+//HELPERS////////
+.include-transition {
+  	@include transition(all .25s);
+}
+.mb--75 {
+	margin-bottom: -75px;
+}
+.mt--75 {
+	margin-top: -75px;
+}
+
+
+//LAYOUT/////////
+.main-content {
+}
+.jumbotron {
+	padding: 200px 25px 125px 25px;
+	border-radius: 0px;
+	.lead {
+		font-size: 1.75em;
+	}
+	&.jumbotron-image {
+		color: white;
+		text-shadow: 0 0 15px rgba(0,0,0,0.25);
+		background-image: url('../img/jumbotron-home-bg.jpg');
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+.wrap {
+	width: 100%;
+	height: auto;
+	padding: 35px 0;
+	margin-bottom: 15px;
+	background: transparent;
+	&.wrap-white {
+		background: #fff;
+	}
+	&.wrap-primary {
+		background: $primary;
+	}
+	&.wrap-gray {
+		background: #d9d9d9;
+	}
+	&.wrap-image {
+		color: white;
+		text-shadow: 0 0 15px rgba(0,0,0,0.25);
+		background-image: url('../img/jumbotron-home-bg.jpg');
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+	&.wrap-shadowed {
+		box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	}
+}
+.shadowed-box {
+	padding: 25px;
+	color: #111;
+	text-shadow: none;
+	background: white;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+.sponsor-logo-wrap {
+	width: 100%;
+	margin: 0 auto;
+	height: auto;
+	background: white;
+	box-shadow: 0 0 15px rgba(0,0,0,0.1);
+	text-align: center;
+	.sponsor-logo {
+		display: inline-block;
+		margin: 0 2px;
+		@include media-breakpoint-down(md) {
+			width: 150px;
+		}
+		@include media-breakpoint-down(sm) {
+			width: 100px;
+		}
+	}
+}
+footer {
+	width: 100%;
+	margin-top: 25px;
+	padding: 10px 0;
+}
+
+
+
+//NAVBAR////////
+.navbar {
+	box-shadow: 0 0 15px rgba(0,0,0,0.25);
+	background: white;
+	//NAVBAR ON DESKTOP
+	@include media-breakpoint-up(sm) {
+		&.navbar-transparent {
+			background-color: transparent !important;
+			color: white;
+			box-shadow: none;
+			.navbar-brand {
+				background-position: 0 0;
+			}
+			.navbar-nav {
+				.nav-item {
+					.nav-link {
+						color: white;
+						text-shadow: 0 0 10 rgba(0,0,0,0.25);
+					}
+				}
+			}
+		}
+	}
+	//NAVBAR ON MOBILE RESET
+	@include media-breakpoint-down(sm) {
+		box-shadow: 0 0 15px rgba(0,0,0,0.25);
+		&.navbar-transparent {
+			background-color: white !important;
+			.navbar-brand {
+				background-position: 0 -43px;;
+			}
+			.navbar-nav {
+				.nav-item {
+					.nav-link {
+						color: #111;
+						text-shadow: none;
+					}
+				}
+			}
+		}
+	}
+	.navbar-brand {
+		background: url('../img/decibel-logo-sprite.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: 0 -43px;;
+		width: 180px;
+		height: 43px;
+		display: block;
+	}
+	.navbar-nav {
+		.nav-item {
+			.nav-link {
+				font-weight: bold;
+				font-size: 0.7em;
+				text-transform: uppercase;
+				letter-spacing: 1px;
+				color: #111;
+				&.dropdown-no-arrow {
+					&:after {
+						display: none;
+					}
+					&[aria-expanded="true"] {
+						color: $primary;
+						border: 0px;
+					}
+				}
+				@include media-breakpoint-down(md) {
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+				@include media-breakpoint-down(sm) {
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+			&.nav-btn {
+				a {
+					background: $primary;
+					color: white;
+					border-radius: $border-radius;
+					padding-left: 15px;
+					padding-right: 15px;
+				}
+			}
+		}
+		.dropdown-menu {
+			background: #333;
+			color: white;
+			border-radius: 0px;
+			border: 0px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			.dropdown-item {
+				color: white;
+				padding: 0.1rem .75rem;
+				&:hover {
+					background-color: #222;
+					color: #999
+				}
+			}
+			&.dropdown-menu-search {
+				background: white;
+				min-width: 250px;
+				padding-left: 5px;
+				padding-right: 5px;
+				.btn {
+					background: transparent;
+					border: 0px;
+				}
+				input {
+					border: 0px;
+					&:focus, &:active {
+						outline: none;
+						color: black;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+//FORMS/////////////
+label, small {
+	text-transform: uppercase;
+	color: #848f9e;
+	font-size: 0.75em;
+	font-weight: bold;
+	margin: 0px;
+}
