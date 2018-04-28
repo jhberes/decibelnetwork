@@ -33,6 +33,17 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.display-1,.display-2,.display-3,.disp
 }
 
 
+//Text highlight background
+::-moz-selection { 
+	background: #000;
+	color: white;
+}
+::selection { 
+	background: #000;
+	color: white;
+}
+
+
 //BUTTONS////////
 .btn {
 	text-transform: uppercase;
@@ -171,53 +182,35 @@ footer {
 .navbar {
 	box-shadow: 0 0 15px rgba(0,0,0,0.25);
 	background: white;
-	//NAVBAR ON DESKTOP
-	@include media-breakpoint-up(sm) {
-		&.navbar-transparent {
-			padding: 35px 45px;
-			background-color: transparent !important;
-			color: white;
-			box-shadow: none;
-			.navbar-brand {
-				background-position: 0 0;
-			}
-			.navbar-nav {
-				.nav-item {
-					.nav-link {
-						color: white;
-						text-shadow: 0 0 10 rgba(0,0,0,0.25);
-  						@include transition(all .25s);
-						&:hover {
-							color: rgba(255,255,255,0.5);
-						}
+	padding: 35px 45px;
+	&.navbar-transparent {
+		background-color: transparent !important;
+		color: white;
+		box-shadow: none;
+		.navbar-brand {
+			background-position: 0 0;
+		}
+		.navbar-nav {
+			.nav-item {
+				.nav-link {
+					color: white;
+					text-shadow: 0 0 10 rgba(0,0,0,0.25);
+						@include transition(all .25s);
+					&:hover {
+						color: rgba(255,255,255,0.5);
 					}
 				}
 			}
-			@include media-breakpoint-down(md) {
-				padding: 15px;
-			}
-			@include media-breakpoint-down(sm) {
-				padding: 0.5rem 1rem;
-			}
+		}
+		.navbar-toggler {
+			display: none;
 		}
 	}
-	//NAVBAR ON MOBILE RESET
+	@include media-breakpoint-down(md) {
+		padding: 25px 35px;
+	}
 	@include media-breakpoint-down(sm) {
-		box-shadow: 0 0 15px rgba(0,0,0,0.25);
-		&.navbar-transparent {
-			background-color: white !important;
-			.navbar-brand {
-				background-position: 0 -43px;;
-			}
-			.navbar-nav {
-				.nav-item {
-					.nav-link {
-						color: #111;
-						text-shadow: none;
-					}
-				}
-			}
-		}
+		padding: 20px 30px;
 	}
 	.navbar-brand {
 		background: url('../img/decibel-logo-sprite.png');

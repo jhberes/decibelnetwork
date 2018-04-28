@@ -6067,6 +6067,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .display-1, .display-2, .d
   .display-4 {
     font-size: 2.25em; } }
 
+::-moz-selection {
+  background: #000;
+  color: white; }
+
+::selection {
+  background: #000;
+  color: white; }
+
 .btn {
   text-transform: uppercase;
   text-transform: capitolize;
@@ -6176,37 +6184,28 @@ footer {
 
 .navbar {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-  background: white; }
-  @media (min-width: 576px) {
-    .navbar.navbar-transparent {
-      padding: 35px 45px;
-      background-color: transparent !important;
+  background: white;
+  padding: 35px 45px; }
+  .navbar.navbar-transparent {
+    background-color: transparent !important;
+    color: white;
+    box-shadow: none; }
+    .navbar.navbar-transparent .navbar-brand {
+      background-position: 0 0; }
+    .navbar.navbar-transparent .navbar-nav .nav-item .nav-link {
       color: white;
-      box-shadow: none; }
-      .navbar.navbar-transparent .navbar-brand {
-        background-position: 0 0; }
-      .navbar.navbar-transparent .navbar-nav .nav-item .nav-link {
-        color: white;
-        text-shadow: 0 0 10 rgba(0, 0, 0, 0.25);
-        transition: all 0.25s; }
-        .navbar.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
-          color: rgba(255, 255, 255, 0.5); } }
-  @media (min-width: 576px) and (max-width: 1099.98px) {
-    .navbar.navbar-transparent {
-      padding: 15px; } }
-  @media (min-width: 576px) and (max-width: 767.98px) {
-    .navbar.navbar-transparent {
-      padding: 0.5rem 1rem; } }
+      text-shadow: 0 0 10 rgba(0, 0, 0, 0.25);
+      transition: all 0.25s; }
+      .navbar.navbar-transparent .navbar-nav .nav-item .nav-link:hover {
+        color: rgba(255, 255, 255, 0.5); }
+    .navbar.navbar-transparent .navbar-toggler {
+      display: none; }
+  @media (max-width: 1099.98px) {
+    .navbar {
+      padding: 25px 35px; } }
   @media (max-width: 767.98px) {
     .navbar {
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.25); }
-      .navbar.navbar-transparent {
-        background-color: white !important; }
-        .navbar.navbar-transparent .navbar-brand {
-          background-position: 0 -43px; }
-        .navbar.navbar-transparent .navbar-nav .nav-item .nav-link {
-          color: #111;
-          text-shadow: none; } }
+      padding: 20px 30px; } }
   .navbar .navbar-brand {
     background: url("../img/decibel-logo-sprite.png");
     background-repeat: no-repeat;
