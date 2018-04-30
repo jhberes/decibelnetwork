@@ -6185,7 +6185,7 @@ footer {
 .navbar {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
   background: white;
-  padding: 35px 45px; }
+  padding: 20px 45px; }
   .navbar.navbar-transparent {
     background-color: transparent !important;
     color: white;
